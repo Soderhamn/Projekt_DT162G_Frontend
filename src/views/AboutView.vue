@@ -1,16 +1,20 @@
+<script setup></script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio laborum voluptatem voluptatibus est veniam placeat totam, dolores repellendus cumque. Odio rerum minima, dolore tempora error dignissimos perferendis dicta rem?</p>
+  <div class="col-">
+    <h1>Om denna sida</h1>
+    <p>
+      Denna sida skapades som ett projekt i kursen DT162G - JavaScriptbaserad
+      webbutveckling.
+    </p>
+    <h2>Teknologier som används:</h2>
+    <ul>
+      <li>Vue.js (Frontendramverk)</li>
+      <li>Node & Express (Backend)</li>
+      <li>MongoDB (Databas)</li>
+      <li>Bootstrap (CSS-ramverk)</li>
+    </ul>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>

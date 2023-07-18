@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+//import TheWelcome from '../components/TheWelcome.vue'
+import TodoList from "../components/TodoList.vue";
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <h1>Att göra-lista:</h1>
+  <TodoList />
 </template>

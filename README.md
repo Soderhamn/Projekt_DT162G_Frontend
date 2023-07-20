@@ -1,29 +1,7 @@
-# MarcusTodoList
+# Frontend i projekt i kurs DT162G - Marchs TodoList
 
-This template should help get you started developing with Vue 3 in Vite.
+Detta repo utgör frontend-kod för ett projekt jag skapat i kursen DT162G - JavaScriptbaserad webbutveckling.
 
-## Recommended IDE Setup
+Syftet med det här repot är att skapa en Vue-baserad Single-page-applikation som konsumerar ett REST-api som är är uppbyggd med hjälp av NodeJS, Express & Moongoose.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Denna Vue-applikation använder Bootstrap som CSS-ramverk.

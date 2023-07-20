@@ -1,6 +1,16 @@
-<script setup>
-//import TheWelcome from '../components/TheWelcome.vue'
+<script>
 import TodoList from "../components/TodoList.vue";
+
+export default {
+  data() {
+    return {
+      components: {
+        TodoList,
+      },
+      resultMessage: "",
+    };
+  },
+};
 </script>
 
 <template>

@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import TodoList from "../components/TodoList.vue";
+import TodoItem from "../components/TodoItem.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +10,8 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      component: TodoList,
+      component: TodoItem,
     },
     {
       path: "/about",
@@ -18,7 +22,7 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: "/edit",
+      path: "/edit/",
       name: "edit",
       component: () => import("../views/EditView.vue"),
     },

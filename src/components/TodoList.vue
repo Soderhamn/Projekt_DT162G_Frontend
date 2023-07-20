@@ -28,17 +28,18 @@ export default {
 </script>
 
 <template>
+  <button @click="updateTodoList">Uppdatera listan</button>
+
   <TodoItem
     v-for="todo in todos"
     :key="todo._id"
-    id="{{ todo._id }}"
-    title="{{ todo.todoTitle }}"
-    status="{{ todo.todoIsDone }}"
-    text="{{ todo.todoDescription }}"
+    :id="todo._id"
+    :title="todo.todoTitle"
+    :status="todo.todoIsDone"
+    :text="todo.todoDescription"
   />
-  <!--<TodoItem id="123" title="Test" status="0" text="Testar detta" />-->
 
-  <button @click="updateTodoList">Uppdatera listan</button>
+  <!--<TodoItem id="123" title="Test" status="0" text="Testar detta" />-->
 </template>
 
 <style scoped>

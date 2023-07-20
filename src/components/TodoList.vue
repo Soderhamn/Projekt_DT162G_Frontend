@@ -1,18 +1,20 @@
 <script>
 import TodoItem from "./TodoItem.vue";
+import NewItemForm from "../components/NewItemForm.vue";
 
 export default {
   components: {
     TodoItem,
+    NewItemForm,
   },
   data() {
     return {
-      todos: [],
+      todos: [], //Array som kommer innehålla "todos"
     };
   },
   methods: {
     async updateTodoList() {
-      //Kör denna när knappen "uppdatera listan" klickas på
+      //Kör denna när Emits mottas eller när knappen "uppdatera listan" klickas på
       console.log("Ska ladda in todos");
       let res = await fetch("http://127.0.0.1:3000/todoList/");
       this.todos = await res.json();
@@ -20,6 +22,7 @@ export default {
     },
   },
   async mounted() {
+    //Hämta lista med "att-göra" vid laddning av komponenten
     let res = await fetch("http://127.0.0.1:3000/todoList/");
     this.todos = await res.json();
     console.log(this.todos);
@@ -28,8 +31,10 @@ export default {
 </script>
 
 <template>
-  <button @click="updateTodoList">Uppdatera listan</button>
+  <NewItemForm @itemchanged="updateTodoList" />
 
+  <h1>Lista:</h1>
+  <!--Loopar igenom och skriver ut "Todos", lyssnar efter "itemchanged"-emit och uppdaterar listan ifall förändringar skett -->
   <TodoItem
     v-for="todo in todos"
     :key="todo._id"
@@ -37,9 +42,13 @@ export default {
     :title="todo.todoTitle"
     :status="todo.todoIsDone"
     :text="todo.todoDescription"
+    @itemchanged="updateTodoList"
   />
 
-  <!--<TodoItem id="123" title="Test" status="0" text="Testar detta" />-->
+  <!--Knapp för att manuellt uppdatera listan (behövs inte längre, men har varit bra under utveckling/test) -->
+  <button @click="updateTodoList" class="btn btn-secondary">
+    Uppdatera listan
+  </button>
 </template>
 
 <style scoped>

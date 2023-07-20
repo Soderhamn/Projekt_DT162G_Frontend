@@ -1,5 +1,5 @@
 <script>
-import { store } from "../components/store.js";
+import { store } from "../components/store.js"; //Dela state mellan komponenter
 
 export default {
   data() {
@@ -25,15 +25,23 @@ export default {
       <li>Bootstrap (CSS-ramverk)</li>
     </ul>
   </div>
-  <div class="col-">
-    <h3>Reactivity Api</h3>
+  <div class="col-" id="r">
+    <h3>Testar Reactivity Api</h3>
     <p>
-      Räkna upp en räknare (som använder Reactivity API för delad state
-      management mellan komponenter)
+      Det här har egentligen ingenting med "Att göra"-appen att göra, men tryck
+      på knappen för att räkna upp en räknare (som använder Reactivity API för
+      delad state management mellan komponenter) så kommer även räknaren i
+      footern att visa samma värde. :-) Den här tekniken använder jag för att
+      "skicka data" mellan olika views (Inom en och samma view kan man ju
+      använda props & emits).
     </p>
     <button @click="store.test++">Räkna</button>
     <p>Räknare: {{ store.test }}</p>
   </div>
 </template>
 
-<style></style>
+<style>
+#r {
+  margin-top: 150px;
+}
+</style>

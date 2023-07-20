@@ -14,7 +14,6 @@ export default {
 </script>
 
 <template>
-  <h1>Att göra-lista:</h1>
   <!--<span> {{ resultMessage }}</span>-->
   <TodoList />
 </template>

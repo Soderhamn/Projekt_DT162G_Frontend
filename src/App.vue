@@ -1,5 +1,14 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from "vue-router";
+import { store } from "./components/store.js";
+
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+};
 </script>
 
 <template>
@@ -28,7 +37,9 @@ import { RouterLink, RouterView } from "vue-router";
     <p>
       Projekt i kurs DT162G<br />
       Av: Marcus Andersson<br />
-      <a href="mailto:maan2117@student.miun.se">maan2117@student.miun.se</a>
+      <a href="mailto:maan2117@student.miun.se">maan2117@student.miun.se</a
+      ><br />
+      Räknare: {{ store.test }}
     </p>
   </footer>
 </template>

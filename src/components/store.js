@@ -5,4 +5,5 @@ import { reactive } from "vue";
 
 export const store = reactive({
   test: 0,
+  editId: "",
 });

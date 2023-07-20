@@ -1,4 +1,4 @@
-# Frontend i projekt i kurs DT162G - Marchs TodoList
+# Frontend i projekt i kurs DT162G - Marcus TodoList
 
 Detta repo utgör frontend-kod för ett projekt jag skapat i kursen DT162G - JavaScriptbaserad webbutveckling.
 

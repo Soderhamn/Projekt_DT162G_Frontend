@@ -2,11 +2,11 @@
 import TodoList from "../components/TodoList.vue";
 
 export default {
+  components: {
+    TodoList,
+  },
   data() {
     return {
-      components: {
-        TodoList,
-      },
       resultMessage: "",
     };
   },
@@ -15,6 +15,6 @@ export default {
 
 <template>
   <h1>Att göra-lista:</h1>
-  <span> {{ resultMessage }}</span>
+  <!--<span> {{ resultMessage }}</span>-->
   <TodoList />
 </template>

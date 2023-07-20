@@ -1,4 +1,14 @@
-<script setup></script>
+<script>
+import { store } from "../components/store.js";
+
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+};
+</script>
 
 <template>
   <div class="col-">
@@ -14,6 +24,15 @@
       <li>MongoDB (Databas)</li>
       <li>Bootstrap (CSS-ramverk)</li>
     </ul>
+  </div>
+  <div class="col-">
+    <h3>Reactivity Api</h3>
+    <p>
+      Räkna upp en räknare (som använder Reactivity API för delad state
+      management mellan komponenter)
+    </p>
+    <button @click="store.test++">Räkna</button>
+    <p>Räknare: {{ store.test }}</p>
   </div>
 </template>
 

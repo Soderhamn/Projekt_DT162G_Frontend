@@ -2,29 +2,43 @@
 import TodoItem from "./TodoItem.vue";
 
 export default {
+  components: {
+    TodoItem,
+  },
   data() {
     return {
       todos: [],
-      components: {
-        TodoItem,
-      },
     };
   },
+  methods: {
+    async updateTodoList() {
+      //Kör denna när knappen "uppdatera listan" klickas på
+      console.log("Ska ladda in todos");
+      let res = await fetch("http://127.0.0.1:3000/todoList/");
+      this.todos = await res.json();
+      console.log(this.todos);
+    },
+  },
   async mounted() {
-    /* Efter inladdning */
     let res = await fetch("http://127.0.0.1:3000/todoList/");
     this.todos = await res.json();
+    console.log(this.todos);
   },
 };
 </script>
 
-<template v-for="todo in todos">
+<template>
   <TodoItem
+    v-for="todo in todos"
+    :key="todo._id"
     id="{{ todo._id }}"
     title="{{ todo.todoTitle }}"
     status="{{ todo.todoIsDone }}"
     text="{{ todo.todoDescription }}"
   />
+  <!--<TodoItem id="123" title="Test" status="0" text="Testar detta" />-->
+
+  <button @click="updateTodoList">Uppdatera listan</button>
 </template>
 
 <style scoped>
